@@ -8,4 +8,8 @@ for (let i=0; i<numbers.length; i++) {
 	}
 }
 
-console.log("O número de números impares no array é: " + contaImpares);
+if (contaImpares === 0) {
+	console.log("Nenhum valor ímpar encontrado");
+} else {
+	console.log("O número de números impares no array é: " + contaImpares);
+}
