@@ -1,4 +1,3 @@
-
 let cproduto = 10;
 let venda = 30;
 let lucrounitario = venda-cproduto-0.20*cproduto;
