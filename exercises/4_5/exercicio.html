@@ -34,23 +34,50 @@
     <div class="main-content">
       <div class="center-content">
         <p>Texto padrão do nosso site</p>
-        <p>-----</p>
+        <p id="maneh">-----</p>
         <p>Trybe</p>
       </div>
     </div>
     <script>
-        /*
-        Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
+      /*Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
         - document.getElementById()
         - document.getElementsByClassName()
         - document.getElementsByTagName()
- Crie uma função que mude o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos. (Não gaste tempo pensando no texto e sim realizando o exercício)
- Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe.
- Crie uma função que mude a cor do quadrado vermelho para branco.
- Crie uma função que corrija o texto da tag <h1>.
- Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
- Crie uma função que exiba o conteúdo de todas as tags <p> no console.
-        */
+      */ 
+
+      //ex1: Crie uma função que mude o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos.
+      document.getElementById("maneh").innerHTML = "Empregado e ganhando bem.";
+      //ex2:
+      //Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe.
+      mudaCorQuadrado("main-content","green");
+      function mudaCorQuadrado(classe, cor){
+        let variavel = document.getElementsByClassName(classe)[0];
+        variavel.style.backgroundColor = cor;
+      }
+      //ex3: Crie uma função que mude a cor do quadrado vermelho para branco.
+      mudaCorQuadrado("center-content","white");
+      
+      //ex4: Crie uma função que corrija o texto da tag <h1>
+      mudaTextoH("h1", "abobrinha eh mato");
+      function mudaTextoH(qualTag, texto){
+        document.getElementsByTagName(qualTag)[0].innerHTML = texto;
+      }
+      //ex5: Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
+        capslock("p");
+      function capslock(qualTag){
+        let maiuscula = document.getElementsByTagName(qualTag)[0].innerHTML;
+        maiuscula = maiuscula.toUpperCase();
+        document.getElementsByTagName(qualTag)[0].innerHTML = maiuscula;
+      }
+      //ex6:  Crie uma função que exiba o conteúdo de todas as tags <p> no console.
+      imprimeConteudoTag("p");
+      function imprimeConteudoTag(qualTag){
+        for (let i = 0; i < document.getElementsByTagName(qualTag).length; i+=1){
+          console.log(document.getElementsByTagName(qualTag)[i].innerHTML)
+        }
+      }
+        
+
     </script>
   </body>
 </html>
