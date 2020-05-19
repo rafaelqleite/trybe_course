@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Desafio</title>
+</head>
+
+<body>Criar uma lista (ul, li) dinâmica:<br>
+  <ul>
+    <li>Os itens com índice par devem receber a classe par;</li>
+    <li>Os itens com índice impar devem receber a classe impar;</li>
+    <li>O último item da lista deve conter as classes impar e par.</li>
+  </ul>
+  <p id="exerciciodesafio">Pestinha<br><br>
+  </p>
+  <script>
+    criaListaDinamica(14);
+    function criaListaDinamica(tamanho) {
+      let recorrente = document.getElementById("exerciciodesafio")
+      recorrente.innerHTML += '<ul>'
+      let classe = "";
+      for (let i = 1; i <= tamanho; i += 1) {
+        if (i % 2 == 0) {
+          classe = "par";
+        } else {
+          classe = "impar";
+        }
+        if (i == tamanho) {
+          classe = "par impar";
+        }
+        recorrente.innerHTML += '<li class="' + classe + '">' + "Elemento " + i + " de classe " + classe + '</li>';
+      }
+      recorrente.innerHTML += '</ul>'
+    }
+
+
+  </script>
+</body>
+
+</html>
