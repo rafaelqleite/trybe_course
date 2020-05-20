@@ -17,6 +17,20 @@
  <button id="lib-button">Lib it!</button>
   
  <div id="story"></div>
-  
+
+ <script>
+   let button = document.querySelector("button");
+   
+   button.addEventListener('click', makeMadLib);
+
+   function makeMadLib() {
+     let input1 = document.getElementById("noun").value;
+     let input2 = document.querySelector("#adjective").value;
+     let input3 = document.querySelector("#person").value;
+     let story = document.querySelector("#story");
+     story.innerHTML = input3 + " saiu caminhando e no caminho " + input2 + " e por isso, " + input1;
+   }
+
+ </script>
  </body>
 </html>
