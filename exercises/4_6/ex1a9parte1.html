@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Exercício 4.6</title>
+  <style>
+    div {
+      border-color: black;
+      border-style: solid;
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    .main-content {
+      background-color: yellow;
+    }
+
+    .main-content .center-content {
+      background-color: red;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .main-content .center-content p {
+      font-style: italic;
+    }
+
+    .main-content .left-content {
+      background-color: green;
+      width: 60%;
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+    .main-content .left-content .small-image {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 100%;
+    }
+
+    .main-content .right-content {
+      background-color: blue;
+      width: 60%;
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    .main-content .description {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <ol>
+    <li>Adicione a tag h1 com o texto Exercício 4.6 - JavaScript DOM como filho da tag body</li>
+    <li>Adicione a tag div com a classe main-content como filho da tag body;</li>
+    <li>Adicione a tag div com a classe center-content como filho da tag div criada no passo 2;</li>
+    <li>Adicione a tag p como filho do div criado no passo 3 e coloque algum texto;</li>
+    <li>Adicione a tag div com a classe left-content como filho da tag div criada no passo 2;</li>
+    <li>Adicione a tag div com a classe right-content como filho da tag div criada no passo 2;</li>
+    <li>Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image. Esse
+      elemento deve ser filho do div criado no passo 5;</li>
+    <li>Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um, dois, três, … como valores da
+      lista. Essa lista deve ser filha do div criado no passo 6;</li>
+    <li>Adicione 3 tags h3, todas sendo filhas do div criado no passo 2.
+  </ol>
+  <script>
+    //ex 1
+    let elementoH = document.createElement("h1");
+    elementoH.innerHTML = "Exercício 4.6 - JavaScript DOM";
+    document.body.appendChild(elementoH)
+
+    //ex 2:
+    let elementoDiv = document.createElement("div");
+    elementoDiv.className = "main-content";
+    document.body.appendChild(elementoDiv);
+
+    //ex 3:
+    let a = document.querySelector(".main-content");
+    let novaDiv = document.createElement("div");
+    novaDiv.className = "center-content";
+    a.appendChild(novaDiv);
+    
+    //ex 4:
+    let b = document.querySelector(".center-content");
+    let novoP = document.createElement("p");
+    novoP.innerHTML = "Algum texto para o exercício 4!!!";
+    b.appendChild(novoP);
+
+    //ex 5:
+    let z = document.querySelector(".main-content");
+    console.log(z);
+    let divLeft = document.createElement("div");
+    divLeft.className = "left-content";
+    console.log(divLeft);
+    z.append(divLeft);
+
+    //ex 6:
+    let divRigh = document.createElement("div");
+    divRigh.className = "right-content";
+    z.append(divRigh);
+
+    //ex 7:
+    let k = document.querySelector(".left-content");
+    console.log(k);
+    let imagem = document.createElement("img");
+    imagem.src = "https://picsum.photos/200/";
+    imagem.className = "small-image";
+    k.append(imagem);
+
+    //ex8:
+    let y = document.querySelector(".right-content");
+    let listaNotOrdenada = document.createElement("ul");
+    listaNotOrdenada.className = "listaN";
+    y.append(listaNotOrdenada);
+
+    y = document.querySelector(".listaN");
+    console.log(y)
+
+    for (let i = 1; i<=10; i+=1){
+      listaNotOrdenada = document.createElement("li");
+      listaNotOrdenada.innerHTML = "Linha: " + i;
+      y.append(listaNotOrdenada);
+    }
+    
+    console.log(y);
+
+    //ex9:
+    y = document.querySelector(".main-content");
+    console.log(y);
+    let criaH = "";
+    
+    for (let i=1; i<=3; i+=1){
+      criaH = document.createElement("h3");
+      y.append(criaH);
+    }
+    
+  </script>
+</body>
+
+</html>
