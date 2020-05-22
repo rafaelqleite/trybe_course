@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercicio sobre Local Storage</title>
+    <style>
+      body { font-family: Arial;
+             line-height: 0.5}
+    </style>
+  </head>
+  <body id = "abobrinha">
+    Escolha uma cor de fundo da tela: <input type="text" id="fundo"> <button id="fundo-button">Mudar cor de fundo</button><br><br>
+    Escolha a Cor do texto: <input type="text" id="corTexto"> <button id="corTexto-button">Cor do texto</button><br><br>
+    Escolha o Tamanho da fonte: <input type="text" id="tamanhoFonte"> <button id="tamanhoFonte-button">Mudar Tamanho da fonte</button><br><br>
+    Espaçamento entre as linhas do texto: <input type="text" id ="espacamento"> <button id="espacamento-button">Mudar espaçamento</button><br><br>
+    Tipo da fonte (Font family): <input type="text" id="escolhaFonte"> <button id="escolhaFonte-button">Mudar a fonte</button><br><br>
+    <button id="limpa">Limpe todos os parâmetros</button>
+  
+    <script>
+      if (typeof(Storage) != "undefined"){
+        document.body.style.backgroundColor = localStorage.getItem("cordeFundo");
+        document.body.style.color = localStorage.getItem("corTexto");
+        document.body.style.fontSize = localStorage.getItem("tamanhoFonte") + "px";
+        document.getElementById("abobrinha").style.fontFamily = localStorage.getItem("escolhaFonte");
+        document.getElementById("abobrinha").style.lineHeight = localStorage.getItem("espacamento");
+        
+      } else {
+        localStorage.setItem("cordeFundo", "white");
+        localStorage.setItem("corTexto", "black");
+        localStorage.setItem("tamanhoFonte", 16);
+        localStorage.setItem("escolhaFonte", "Arial");
+        localStorage.setItem("espacamento", 0.5);
+      }
+      
+
+
+      //monitora o botao de trocar fundo
+      let posBotaoFundo = document.getElementById("fundo-button");
+      console.log(posBotaoFundo);
+      posBotaoFundo.addEventListener("click", mudaFundo);
+
+      //monitora o botao de trocar cor de fonte
+      let posBotaoCorFonte = document.getElementById("corTexto-button");
+      console.log(posBotaoCorFonte);
+      posBotaoCorFonte.addEventListener("click", mudaCor);
+
+      //monitora o botao tamanho da fonte
+      let posFontSize = document.getElementById("tamanhoFonte-button");
+      posFontSize.addEventListener("click", trocaTamanho);
+
+      //monitora o botao troca espacamento
+      let posBotaoEspacamento = document.getElementById("espacamento-button");
+      posBotaoEspacamento.addEventListener("click", trocaEspacamento);
+
+      //monitora o botao troca fonte
+      let postrocaFonte = document.getElementById("escolhaFonte-button");
+      postrocaFonte.addEventListener("click", trocaFonte);
+      
+      //monitora o botao limpa tudo:
+      let posBotaoLimpa = document.getElementById("limpa");
+      posBotaoLimpa.addEventListener("click", limpaTudo);
+
+      function mudaCor() {
+        let posCor = document.getElementById("corTexto").value
+        console.log(posCor);
+        document.body.style.color = posCor;
+        localStorage.setItem("corTexto", posCor)
+      }
+
+      function trocaTamanho() {
+        let posTamanho = document.getElementById("tamanhoFonte").value;
+        console.log(posTamanho);
+        document.body.style.fontSize = posTamanho + "px";
+        localStorage.setItem("tamanhoFonte", posTamanho);
+      }
+
+      function trocaEspacamento() {
+        let posEspacamento = document.getElementById("espacamento").value;
+        document.getElementById("abobrinha").style.lineHeight = posEspacamento;
+        localStorage.setItem("espacamento", posEspacamento)
+      }
+
+      function trocaFonte() {
+        let posFonte = document.getElementById("escolhaFonte").value;
+        console.log(posFonte);
+        let teste = document.getElementById("abobrinha");
+        
+        abobrinha.style.fontFamily = posFonte;
+        console.log("teste")
+        localStorage.setItem("escolhaFonte", posFonte);
+      }
+      function limpaTudo() {
+        localStorage.clear();
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+        document.body.style.fontSize = "16px";
+        document.getElementById("abobrinha").style.fontFamily = "Arial";
+        document.getElementById("abobrinha").style.lineHeight = 0.5;
+      }
+      function mudaFundo(){
+        let posFundo = document.getElementById("fundo").value
+        document.body.style.backgroundColor = posFundo;
+        localStorage.setItem("cordeFundo", posFundo)
+      }
+    </script>
+  </body>
+</html>
