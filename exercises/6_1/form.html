@@ -1,0 +1,115 @@
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml; charset=UTF-8" />
+    <title>Segundo Projeto - Rafael Quinteiro Leite</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <header><h1>Formulários</h1></header>
+    <article>
+      <form action="" method="GET">
+      <fieldset>
+      <div>
+        <label form="nome">Nome:
+          <input type="text"
+                 id="nome"
+                 maxlength="40"
+                 name="nome"
+                 required
+          />
+        </label><br>
+      </div>
+    <div>
+        <label form="usuario_email">E-mail:
+        <input type="text"
+               id="usuario_email"
+               name="usuario_email"
+               maxlength="50"
+	       pattern = "^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})$"
+        />
+      </label><br></div>
+    <div>
+      <label form="cpf">CPF:
+        <input type="text"
+               name="cpf"
+               id="cpf"
+               maxlength="11"
+               required
+               />
+      </label><br></div>
+
+    <div>
+      <label form="endereco">Endereço:
+        <input id="endereco"
+               type="text"
+               name="endereco"
+               maxlength="200"
+               required
+               />
+      </label><br></div>
+
+    <div>
+      <label form="cidade">Cidade:
+        <input type = "text"
+               id="cidade"
+               name ="cidade"
+               maxlength="28"
+               required
+               />
+      </label><br></div>
+
+    <div>
+      <label form="estado">Estado:
+        <select name="estado" id="estado" required>
+          <option value="">Escolha</option>
+
+
+        </select>
+      </label><br></div>
+
+    <div>
+      Tipo de Morada:<br>
+      <label form="casa"><input type="radio" name="morada" id="casa" value="c" required/>Casa</label>
+      <label form="apartamento"><input type="radio" name="morada" id="apartamento" value="a"/>Apartamento</label>
+
+      </label></div>
+
+      </fieldset>
+      <fieldset>
+        <legend>Último emprego: </legend>
+        <div>
+        <label form="curriculo">Digite um resumo do seu curriculo:<br>
+        <textarea id = "curriculo" name="curriculo" cols="60" rows="15" required maxlength="1000"></textarea>
+      </label></div>
+
+
+
+      <div>
+        <label for="cargo">Cargo:
+          <input type="text" id="cargo" maxlength="40" required="required" name="cargo">
+        </label>
+      </div>
+
+      <div>
+        <label for="descricao-cargo">Descrição do cargo:
+          <input type="text" id="descricao-cargo" maxlength="500" required="required" name="descricao_cargo">
+        </label>
+      </div>
+
+      <div>
+        <label for="data-inicio">Data de início:
+          <input type="date" id="data-inicio" required="required" min="1900-0-0" max="2020-12-31" name="datainicio">
+        </label>
+      </div>
+
+      </fieldset>
+      <button type="submit" name="enviar" value="1">Enviar</button>
+    </form>
+    </article>
+    <section></section>
+    <aside></aside>
+    <footer></footer>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+  </html>
