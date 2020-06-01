@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/xhtml; charset=UTF-8" />
+  <title>Segundo Projeto - Rafael Quinteiro Leite</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="dist/css/DatePickerX.min.css">
+  <script src="dist/js/just-validate.min.js"></script>
+
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Formulários</h1>
+    </header>
+    <article>
+      <form action="" method="GET" class="js-form-2">
+        <fieldset>
+          <div class="row">
+            <div class="col">
+              <label form="nome">Nome:
+                <input class="form-control" type="text" id="nome" maxlength="40" name="nome" required />
+              </label><br>
+            </div>
+            <div class="col">
+              <label form="usuario_email">E-mail:
+                <input class="form-control" type="text" id="usuario_email" name="usuario_email" maxlength="50" data-validate-field="email" />
+              </label><br></div>
+            <div class="col">
+              <label form="cpf">CPF:
+                <input class="form-control" type="text" name="cpf" id="cpf" maxlength="11" required />
+              </label><br>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <label form="endereco">Endereço:
+                <input class="form-control" id="endereco" type="text" name="endereco" maxlength="200" required />
+              </label><br>
+            </div>
+
+            <div class="col">
+              <label form="cidade">Cidade:
+                <input class="form-control" type="text" id="cidade" name="cidade" maxlength="28" required />
+              </label><br></div>
+
+            <div class="col">
+              <label form="estado">Estado:
+                <select class="custom-select" name="estado" id="estado" required>
+                  <option value="">Escolha</option>
+                </select>
+              </label><br>
+            </div>
+          </div>
+
+          <div class="form group">
+            Tipo de Morada:
+            <label class="radio-inline" form="casa">
+              <input class="radio" type="radio" name="morada" id="casa" value="c" required />Casa
+            </label>
+            <label class="radio-inline" form="apartamento">
+              <input class="radio" type="radio" name="morada" id="apartamento" value="a" />Apartamento
+            </label>
+          </div>
+
+        </fieldset>
+        <fieldset>
+          <legend>Último emprego: </legend>
+          <div class="form group">
+            <label form="curriculo">Digite um resumo do seu curriculo:<br>
+              <textarea id="curriculo" name="curriculo" cols="60" rows="15" required maxlength="1000"></textarea>
+            </label></div>
+
+
+
+          <div class="form group">
+            <label for="cargo">Cargo:
+              <input class="form-control" type="text" id="cargo" maxlength="40" required="required" name="cargo">
+            </label>
+          </div>
+
+          <div class="form group">
+            <label for="descricao-cargo">Descrição do cargo:
+              <input class="form-control" type="text" id="descricao-cargo" maxlength="500" required="required"
+                name="descricao_cargo">
+            </label>
+          </div>
+
+          <div class="form group">
+            <label for="data-inicio">Data de início:
+              <input class="form-control" type="text" id="data-inicio" required="required" name="datainicio">
+            </label>
+          </div>
+
+        </fieldset>
+        <button type="submit" class="btn btn-primary" name="enviar" value="1">Enviar</button>
+      </form>
+  </div>
+  </article>
+  <section></section>
+  <aside></aside>
+  <footer></footer>
+
+  <script src="dist/js/DatePickerX.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
