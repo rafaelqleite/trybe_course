@@ -22,7 +22,7 @@ const lesson3 = {
 crie uma função que retorne o número total de estudantes em todas as aulas. */
 
 const allLessons = Object.assign({}, {lesson1}, {lesson2}, {lesson3});
-//console.log(Object.entries(Object.entries(allLessons)[0][1]));
+
 
 function somaEstudantes(objeto) {
  let auxiliar = Object.entries(allLessons);
