@@ -1,6 +1,13 @@
 const assert = require('assert');
-
-const person1 = { name: 'john', age: 21 };
-const person2 = { name: 'john', age: 21 };
-
-assert.deepEqual(person1, person2, 'these two objects are the same');
+function myRemove(arr, item) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i += 1) {
+    if (item !== arr[i]) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+}
+// implemente seus testes aqui
+const expected = myRemove([1, 2, 3, 4], 4)
+assert.deepEqual(expected, [1, 2, 3])
