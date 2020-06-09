@@ -29,3 +29,11 @@ function listaKeys(objeto) {
 }
 
 listaKeys(lesson2);
+
+// outra forma de se fazer:
+
+const listaKeys2 = objeto => {
+  return Object.keys(objeto);
+}
+
+console.log(listaKeys2(lesson2));

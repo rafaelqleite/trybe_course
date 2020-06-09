@@ -27,3 +27,8 @@ function tamanhoObjeto(objeto) {
 }
 
 tamanhoObjeto(lesson2);
+
+//outra forma de se fazer:
+
+const tamanhoObjeto2 = objeto => { return Object.keys(objeto).length; }
+console.log(tamanhoObjeto2(lesson2));

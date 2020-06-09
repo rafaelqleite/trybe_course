@@ -24,47 +24,43 @@ const allLessons = Object.assign({}, {lesson1}, {lesson2}, {lesson3});
 Crie uma função para contar quantos estudantes assistiram às aulas de Matemática.
  Use o objeto criado no exercício 5. */
 
-function contaEstudantes(objeto, materia) {
-  let auxiliar = Object.entries(objeto);
-  let somaEstudantes = 0;
-  for (i in auxiliar) {
-    let auxiliar2 = Object.entries(auxiliar[i][1]);
-    if (auxiliar2[0][1] == materia) {
-      somaEstudantes += auxiliar2[1][1];
-    }
-  }
-  return somaEstudantes;
-}
+ const contaEstudantes2 = (objeto, materia) => {
+   const pegaChaves = Object.keys(objeto);
+   let somaEstudantes = 0;
+   for (item in pegaChaves) {
+     if (objeto[pegaChaves[item]]['materia'] == materia) {
+       somaEstudantes += objeto[pegaChaves[item]]['numeroEstudantes'];
+     }
+   }
+   return somaEstudantes;
+ }
 
-console.log(contaEstudantes(allLessons, 'História'));
+console.log(contaEstudantes2(allLessons, 'Matemática'));
 
-/* Crie uma função que deverá retornar um objeto que representa o relatório do professor
-ou professora, as aulas que ele ou ela ministrou e o número total de estudantes.
-Use o objeto criado no exercício 5: */
-
-/* {
+/*   Crie uma função que deverá retornar um objeto que representa o relatório do
+  professor ou professora, as aulas que ele ou ela ministrou e o número total
+  de estudantes. Use o objeto criado no exercício 5: */
+  /* {
   professor: 'Maria Clara',
   aulas: [ 'Matemática', 'Matemática' ],
   estudantes: 30
 } */
 
-function createReport(objeto, nomeProfessor) {
-  let auxiliar = Object.entries(objeto);
-  let somaEstudantes = 0;
+const relatorioProfessor = (objeto, nomeProfessor) => {
+  const pegaChaves = Object.keys(objeto);
   let arrayAulas = [];
-
-  for (i in auxiliar) {
-    let auxiliar2 = Object.entries(auxiliar[i][1]);
-    if (auxiliar2[2][1] == nomeProfessor) {
-      somaEstudantes += auxiliar2[1][1];
-      arrayAulas.push(auxiliar2[0][1]);
+  let total = 0;
+  for (item in pegaChaves) {
+    if (objeto[pegaChaves[item]]['professor'] == nomeProfessor) {
+      arrayAulas.push(objeto[pegaChaves[item]]['materia']);
+      total += objeto[pegaChaves[item]]['numeroEstudantes'];
     }
   }
-  let objetoRelatorio = {}
-  objetoRelatorio.professor = nomeProfessor;
-  objetoRelatorio.aulas = arrayAulas;
-  objetoRelatorio.estudantes = somaEstudantes;
-  return(objetoRelatorio);
+  const novoObjeto = {};
+  novoObjeto.professor = nomeProfessor;
+  novoObjeto.aulas = arrayAulas;
+  novoObjeto.estudantes = total;
+  return novoObjeto;
 }
 
-console.log(createReport(allLessons, 'Maria Clara'));
+console.log(relatorioProfessor(allLessons, 'Maria Clara'));

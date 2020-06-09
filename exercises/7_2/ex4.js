@@ -31,3 +31,8 @@ const lesson3 = {
 }
 
 listaValores(lesson2);
+
+//outra forma de se fazer:
+const listaValores2 = objeto => { return Object.values(objeto); }
+
+console.log(listaValores2(lesson2));
