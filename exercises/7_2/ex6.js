@@ -35,3 +35,15 @@ function somaEstudantes(objeto) {
 }
 
 somaEstudantes(allLessons);
+
+//outra forma de se fazer, considerando-se que se dá a propriedade a ser contada
+const somaEstudantes2 = (objeto, propriedade) => {
+  let total = 0;
+  const pegaChaves = Object.keys(objeto);
+  for (item in pegaChaves) {
+    total += objeto[pegaChaves[item]][propriedade];
+  }
+  return total;
+}
+
+console.log(somaEstudantes2(allLessons, 'numeroEstudantes'));

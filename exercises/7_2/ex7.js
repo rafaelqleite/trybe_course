@@ -30,3 +30,11 @@ console.log(getValueByNumber(lesson1, 0));
  }
 
  getValueByNumber(lesson1, 0);
+
+ //outra forma de se fazer:
+
+ const getValueByNumber2 = (objeto, posicao) => {
+   return Object.values(objeto)[posicao];
+ }
+
+ console.log(getValueByNumber2(lesson1,0));
