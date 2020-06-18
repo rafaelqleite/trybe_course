@@ -1,5 +1,4 @@
 const assert = require('assert');
-// Encontre o nome da pessoa autora do livro nascida no ano de 1947.
 
 const books = [
   {
@@ -63,14 +62,18 @@ const books = [
     releaseYear: 1928,
   },
 ];
-//  Encontre o nome da pessoa autora do livro nascida no ano de 1947.
-//  utilize o find.
-function authorBornIn1947() {
-  const retornaItem = books.find( (item) => item.author.birthYear === 1947);
-  return retornaItem.author.name;
+
+//Faça uma função que retorne true, se algum livro foi lançado na década de 80, e false, caso contrário.
+
+//Dica: Use a função some
+
+const expected_result = true;
+
+function someBookWasReleaseOnThe80s() {
+  // escreva seu código aqui
+  const resultado = books.some( (item) => (item.releaseYear >= 1980 && item.releaseYear < 1990));
+  return resultado;
 }
 
-console.log(authorBornIn1947());
-assert.equal(authorBornIn1947(), 'Stephen King');
-
-//teste
+console.log(someBookWasReleaseOnThe80s());
+assert.equal(someBookWasReleaseOnThe80s(), expected_result);

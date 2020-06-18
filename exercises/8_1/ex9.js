@@ -1,5 +1,4 @@
 const assert = require('assert');
-// Encontre o nome da pessoa autora do livro nascida no ano de 1947.
 
 const books = [
   {
@@ -63,14 +62,17 @@ const books = [
     releaseYear: 1928,
   },
 ];
-//  Encontre o nome da pessoa autora do livro nascida no ano de 1947.
-//  utilize o find.
-function authorBornIn1947() {
-  const retornaItem = books.find( (item) => item.author.birthYear === 1947);
-  return retornaItem.author.name;
+//Encontre o nome do livro escrito pela pessoa cujo nome registrado começa com três iniciais (terminam com um ponto).
+
+//Dica: use as funções find e filter;
+
+const expected_result = 'O Senhor dos Anéis';
+
+function authorWith3DotsOnName() {
+  // escreva seu código aqui
+  const contemPontos = books.find(item => item.author.name.split('.').length === 4);
+  return contemPontos.name;
 }
 
-console.log(authorBornIn1947());
-assert.equal(authorBornIn1947(), 'Stephen King');
-
-//teste
+console.log(authorWith3DotsOnName());
+assert.deepEqual(authorWith3DotsOnName(), expected_result);
