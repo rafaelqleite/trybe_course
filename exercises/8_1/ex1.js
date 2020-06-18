@@ -72,3 +72,5 @@ function authorBornIn1947() {
 
 console.log(authorBornIn1947());
 assert.equal(authorBornIn1947(), 'Stephen King');
+
+//teste
