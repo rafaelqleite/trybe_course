@@ -10,17 +10,24 @@ const umaPromise = new Promise((resolve, reject) => {
   for (let i =1; i <= 10; i += 1) {
     umArrayQualquer.push(Math.round((Math.random() * 50)**2));
   }
-  const somatorio = umArrayQualquer.reduce((somatorio, item) => somatorio += item, 0);
+  let somatorio = umArrayQualquer.reduce((somatorio, item) => somatorio += item, 0);
   if (somatorio < 8000) {
-    resolve();
+    resolve(somatorio);
   }
   else {
     reject();
   }
 });
 
-umaPromise.then(function deuCerto() {
-  console.log('Eh menor que 8000');
+umaPromise.then(function deuCerto(resultadoDaRequisicao) {
+  const arraySucesso = [];
+  arraySucesso.push(resultadoDaRequisicao/2);
+  arraySucesso.push(resultadoDaRequisicao/3);
+  arraySucesso.push(resultadoDaRequisicao/5);
+  arraySucesso.push(resultadoDaRequisicao/10);
+  console.log('Eh menor que 8000', arraySucesso);
 }).catch(function deuErro() {
   console.log('Deu erro, eh maior que 8000');
 });
+
+//Quando a promise for resolvida com sucesso, retorne o resultado da divisão desse número por 2, 3, 5 e 10 em um array.
