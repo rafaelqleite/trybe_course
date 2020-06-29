@@ -11,6 +11,7 @@
 // da divisão desse número por 2, 3, 5 e 10 em um array.
 // Quando a Promise for rejeitada, imprima, via console.log,
 // a frase "É mais de oito mil! Essa promise deve estar quebrada!"
+//Quando a Promise for bem-sucedida, encadeie nela uma segunda Promise que some os elementos do array.
 
 const umaPromise = new Promise((resolve, reject) => {
   const arrayAleatorio = [];
@@ -27,4 +28,10 @@ umaPromise.then((resultado) => {
   const numerosDivididos = divisores.map(divisor => resultado/divisor);
   console.log(numerosDivididos);
   return numerosDivididos;
-}).catch(errorMsg => console.log(errorMsg));
+}).then(resultadoAnterior => {
+  console.log('ja esta na segunda promise', resultadoAnterior);
+  const somatorio = resultadoAnterior.reduce((acumulador,item) => acumulador += item);
+  console.log(somatorio);
+  return somatorio;
+  }
+).catch(errorMsg => console.log(errorMsg));
