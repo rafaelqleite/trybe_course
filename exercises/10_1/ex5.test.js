@@ -9,3 +9,5 @@ describe('Scoped / Nested block', () => {
 
   test('', () => console.log('2 - test'));
 });
+
+//  exercicio apenas de visualização do que acontece ao utilizar beforeEach e afterEach
