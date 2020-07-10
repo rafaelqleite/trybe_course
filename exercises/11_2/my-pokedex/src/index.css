@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.wrapping-pokemonUnit {
+  background-color: blueviolet;
+  border: 1px solid black;
+  width: 250px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.left{
+  width: 150px;
+  padding-left: 5px;
+}
+.right {
+  border-left: 1px solid black;
+  align: center;
+}
+
+.wrapping-pokemonList{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
