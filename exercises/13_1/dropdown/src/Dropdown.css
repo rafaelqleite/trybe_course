@@ -1,0 +1,42 @@
+body {
+  margin: 15px;
+}
+
+.box {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  width: 15px;
+}
+
+.dropdown {
+  border: 1px solid black;
+  width: 100px;
+  text-align: center;
+}
+
+.dropdown-hidden {
+  visibility: hidden;
+}
+
+.item {
+  border: 1px solid black;
+}
+
+.item:hover {
+  cursor: pointer;
+  background-color: red;
+}
+
+.item:active {
+  background-color: blue;
+}
+
+.box:hover {
+  cursor: pointer;
+  background-color: red;
+}
+
+.box:active {
+  background-color: blue;
+}
