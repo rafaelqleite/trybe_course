@@ -1,0 +1,41 @@
+https://www.freecodecamp.org/learn/front-end-libraries/redux/use-a-switch-statement-to-handle-multiple-actions
+
+const defaultState = {
+  authenticated: false
+};
+
+const authReducer = (state = defaultState, action) => {
+  // change code below this line
+switch (action.type) {
+  default: {
+    return state;
+  }
+
+  case 'LOGIN': {
+    return {
+      authenticated: true,
+    };
+  }
+  case 'LOGOUT': {
+    return {
+      authenticated: false,
+    }
+  }
+}
+  // change code above this line
+};
+
+const store = Redux.createStore(authReducer);
+
+const loginUser = () => {
+  return {
+    type: 'LOGIN'
+  }
+};
+
+const logoutUser = () => {
+  return {
+    type: 'LOGOUT'
+  }
+};
+
