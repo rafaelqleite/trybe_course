@@ -1,0 +1,1 @@
+Retirado de https://medium.com/reactbrasil/entendendo-a-context-api-do-react-criando-um-componente-de-loading-a84f84007dc7
