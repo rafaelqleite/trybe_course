@@ -1,0 +1,10 @@
+SELECT 'This is SQL Exercise, Practice and Solution';
+SELECT 1 AS 'Coluna1', 2 AS 'Coluna2', 3 AS 'Coluna3';
+SELECT 10 + 11 + 12 + 13 + 14 + 15;
+SELECT (15+37)*12/15;
+SELECT * FROM Scientists.Scientists;
+SELECT Name, Hours FROM Scientists.Projects;
+SELECT Name, Hours FROM Scientists.Projects ORDER BY Hours DESC LIMIT 3;
+SELECT DISTINCT Project FROM Scientists.AssignedTo;
+SELECT Scientist FROM Scientists.AssignedTo WHERE Project = 'Ast3';
+SELECT * FROM Scientists.Projects ORDER BY Hours ASC LIMIT 5;
