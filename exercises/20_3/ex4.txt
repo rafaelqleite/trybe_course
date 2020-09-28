@@ -1,0 +1,25 @@
+https://sqlzoo.net/wiki/SELECT_Quiz
+
+EX1)
+SELECT name, population FROM world WHERE population BETWEEN 1000000 AND 1250000;
+
+EX2)
+Table E
+
+EX3)
+SELECT name FROM world WHERE name LIKE '%A' OR name LIKE '%L';
+Alternativa E;
+
+EX4)
+Alternativa C;
+
+EX5)
+Alternativa C;
+
+EX6)
+SELECT name, area, population FROM world WHERE area > 50000 AND population < 10000000;
+Alternativa C
+
+EX7)
+SELECT name, population/area FROM world WHERE name IN('China', 'Australia', 'Nigeria', 'France');
+Alternativa C
