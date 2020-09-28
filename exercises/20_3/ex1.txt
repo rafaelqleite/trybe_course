@@ -1,0 +1,48 @@
+https://sqlzoo.net/wiki/SELECT_names
+
+EX1)
+SELECT name FROM world WHERE name LIKE 'Y%';
+
+EX2)
+SELECT name FROM world WHERE name LIKE '%Y';
+
+EX3)
+SELECT name FROM world WHERE name LIKE '%x%';
+
+EX4)
+SELECT name FROM world WHERE name LIKE '%land';
+
+EX5)
+SELECT name FROM world WHERE name LIKE 'c%ia';
+
+EX6)
+SELECT name FROM world WHERE name LIKE '%oo%';
+
+EX7)
+SELECT name FROM world WHERE name LIKE '%a%a%a%';
+
+EX8)
+SELECT name FROM world WHERE name LIKE '_t%' ORDER BY name;
+
+EX9)
+SELECT name FROM world WHERE name LIKE '%o__o%';
+
+EX10)
+SELECT name FROM world WHERE name LIKE '____';
+
+EX11)
+SELECT name FROM world WHERE name = capital;
+
+EX12)
+SELECT name FROM world WHERE capital = CONCAT(name, ' ', 'City');
+
+EX13)
+SELECT capital, name FROM world WHERE capital LIKE CONCAT('%', name, '%');
+
+EX14)
+SELECT capital, name FROM world WHERE capital LIKE CONCAT(name,  '%') AND capital <> name;
+
+EX15)
+SELECT name, REPLACE(capital, name, '') as extension FROM world WHERE capital LIKE CONCAT(name, '_%');
+
+

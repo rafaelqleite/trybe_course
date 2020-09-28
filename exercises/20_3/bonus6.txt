@@ -1,0 +1,28 @@
+https://sqlzoo.net/wiki/Nobel_Quiz
+
+EX1)
+alternativa E
+
+EX2)
+SELECT COUNT(subject) from nobel WHERE yr BETWEEN 1950 AND 1960 AND subject = 'Chemistry';
+Alternativa C
+
+EX3)
+SELECT COUNT(DISTINCT yr) FROM nobel WHERE yr NOT IN (SELECT DISTINCT yr FROM nobel WHERE subject = 'Medicine');
+Alternativa B.
+
+EX4)
+Alternativa C
+
+EX5)
+SELECT yr FROM nobel WHERE subject NOT IN (SELECT yr FROM nobel WHERE subject IN ('Chemestry', 'Physics'));
+Alternativa C;
+
+EX6)
+SELECT DISTINCT yr FROM nobel WHERE subject = 'Medicine' AND NOT IN (SELECT yr FROM nobel WHERE subject = 'Peace' OR subject = 'Literature');
+
+Alternativa C
+
+EX7)
+Alternativa D
+
