@@ -1,0 +1,14 @@
+SELECT COUNT(DISTINCT(job_id)) FROM  hr.employees;
+SELECT SUM(salary) FROM hr.employees;
+SELECT MIN(salary) FROM hr.employees;
+SELECT MAX(salary) FROM hr.employees;
+SELECT AVG(salary), count(department_id) FROM hr.employees WHERE department_id = 90;
+SELECT MAX(salary), MIN(salary), SUM(salary), AVG(salary) FROM hr.employees;
+SELECT job_id, COUNT(*) FROM hr.employees GROUP BY job_id;
+SELECT MAX(salary) - MIN(salary) FROM hr.employees;
+SELECT manager_id, MIN(salary) FROM hr.employees GROUP BY manager_id ORDER BY MIN(salary) DESC;
+SELECT department_id, SUM(salary) FROM hr.employees GROUP BY department_id;
+SELECT job_id, ROUND(AVG(salary), 2) FROM hr.employees WHERE job_id <> 'it_prog' GROUP BY job_id;
+SELECT job_id, SUM(salary), MAX(salary), MIN(salary), AVG(salary) FROM hr.employees WHERE department_id = 90 GROUP BY job_id;
+SELECT job_id, MAX(salary) FROM hr.employees GROUP BY job_id HAVING MAX(salary) > 4900;
+SELECT department_id, AVG(salary), COUNT(*) FROM hr.employees GROUP BY department_id HAVING COUNT(*) > 10;
