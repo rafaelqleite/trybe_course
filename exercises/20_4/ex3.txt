@@ -1,0 +1,16 @@
+https://academy.vertabelo.com/course/operating-on-data-in-sql/insert/insert/insert
+
+EX1)
+INSERT INTO dish (id, type, name, price) VALUES (9, 'main course', 'Cevapcici', 27) ;
+
+EX2)
+INSERT INTO dish (id, type, name) VALUES (10, 'starter', 'Kosovo Bread');
+
+EX3)
+INSERT INTO dish (id, type, name, price) VALUES (10, 'starter', 'Kosovo Bread', NULL);
+
+EX4)
+INSERT INTO dish (id, type, name, price) VALUES (11, 'main course', 'Gulas s knedlikem', 29), (12, 'dessert', 'Vosi Hnizda', 14);
+
+EX5)
+INSERT INTO dish (id, type, name, price) VALUES (13, 'bleh', 'meh', 20);

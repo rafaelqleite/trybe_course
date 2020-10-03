@@ -1,0 +1,7 @@
+https://sqlbolt.com/lesson/inserting_rows
+
+EX1)
+INSERT INTO movies (title) VALUES ('Toy Story 4');
+
+EX2)
+INSERT INTO boxoffice (movie_id, rating, domestic_sales, international_sales) VALUES (4, 8.7, 340000000, 270000000);
