@@ -1,0 +1,12 @@
+
+https://academy.vertabelo.com/course/operating-on-data-in-sql/delete/delete/delete
+
+EX1)
+DELETE FROM dish WHERE type = 'dessert';
+
+EX2)
+DELETE FROM dish;
+
+EX3)
+DELETE FROM dish WHERE id = 5;
+
