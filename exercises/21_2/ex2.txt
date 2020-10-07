@@ -1,0 +1,7 @@
+https://sqlbolt.com/lesson/select_queries_with_outer_joins
+
+EX1)
+SELECT DISTINCT building FROM employees;
+
+EX2)
+
