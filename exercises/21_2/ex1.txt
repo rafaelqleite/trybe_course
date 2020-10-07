@@ -1,0 +1,10 @@
+https://sqlbolt.com/lesson/select_queries_with_joins
+
+EX1)
+SELECT a.id, a.title, b.domestic_sales, b.international_sales FROM movies as a INNER JOIN boxoffice AS b ON a.id = b.movie_id;
+
+EX2)
+SELECT a.id, a.title, b.domestic_sales, b.international_sales FROM movies as a INNER JOIN boxoffice AS b ON a.id = b.movie_id WHERE b.international_sales > b.domestic_sales;
+
+EX3)
+SELECT a.id, a.title, b.rating FROM movies as a INNER JOIN boxoffice AS b ON a.id = b.movie_id ORDER BY b.rating DESC;
