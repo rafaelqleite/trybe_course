@@ -1,0 +1,32 @@
+use bios;
+
+EX1)
+db.bios.find({ _id: 8}).pretty();
+
+EX2)
+db.bios.find({ _id: 8}, { name: 1 }).pretty();
+
+EX3)
+db.bios.find({ _id: 8}, { name: 1, birth: 1 }).pretty();
+
+EX4)
+db.bios.find( { "name.first" : "John" } ).pretty()
+
+EX5)
+db.bios.find().limit(3).pretty()
+
+EX6)
+db.bios.find().skip(5).limit(3).pretty()
+
+EX7)
+db.books.count()
+
+EX8)
+db.books.find({status: "PUBLISH"}).count()
+
+EX9)
+db.books.find({}, {title: 1, isbn: 1, pageCount: 1, _id: 0}).limit(3)
+
+EX10)
+db.books.find({ status: "MEAP" }, {title: 1, authors: 1, status: 1}).skip(5).limit(10).pretty()
+
