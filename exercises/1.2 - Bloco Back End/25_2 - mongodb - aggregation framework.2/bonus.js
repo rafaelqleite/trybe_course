@@ -22,15 +22,20 @@ db.vendas.aggregate(
         _id:0,
         clienteId: 1,
         dataVenda: 1,
-        dataEntregaPrevista: 1,
-        difAbsolutaEntrega: {
-          $abs:
-            {
-              $divide:
-                [{$subtract: ["$dataVenda", "$dataEntregaPrevista"] }, 24 * 60 * 60 * 1000]
-            }
-          }
+        dataEntregaPrevista: 1
       }
-    }
+    },
+    {
+      $group: {
+        _id: null,
+        maxDataEntrega: {
+          $max: "$dataEntregaPrevista"
+        },
+        minDataEntrega: {
+          $min: "$dataEntregaPrevista"
+        }
+      }
+    },
+    {$project: {_id: 0, diasDiferenca: {$ceil: {$abs: {$divide: [{$subtract:["$maxDataEntrega", "$minDataEntrega"] }, 24 * 60 * 60 * 1000 ] } } } } }
   ]
 ).pretty();
