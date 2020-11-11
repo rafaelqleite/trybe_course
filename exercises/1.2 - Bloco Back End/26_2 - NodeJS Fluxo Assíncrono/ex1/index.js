@@ -21,7 +21,7 @@ function criandoPromises (parametro1, parametro2, parametro3) {
     const final = resultado * parametro3;
     if (final < 50) return Promise.reject("Valor muito baixo");
     return console.log(final);
-  });
+  }).catch((erro) => console.log(erro));
 }
 
-criandoPromises(3, 2, 3);
+criandoPromises('teste', 2, 3);
