@@ -24,4 +24,4 @@ function criandoPromises (parametro1, parametro2, parametro3) {
   }).catch((erro) => console.log(erro));
 }
 
-criandoPromises('teste', 2, 3);
+criandoPromises(2, 2, 3);

@@ -8,9 +8,8 @@
 const readline = require('readline');
 const fs = require('fs');
 
-
-const readFilePromise = async (nomeDoArquivo) => {
-  await fs.readFile(nomeDoArquivo, 'utf8', (err, data) => {
+const readFilePromise = (nomeDoArquivo) => {
+  fs.readFile(nomeDoArquivo, 'utf8', (err, data) => {
     if (err) return console.log('Erro ao ler o arquivo: ', err.message);
     console.log('Conteúdo do arquivo:');
     console.log('Início do arquivo:--------------------');
