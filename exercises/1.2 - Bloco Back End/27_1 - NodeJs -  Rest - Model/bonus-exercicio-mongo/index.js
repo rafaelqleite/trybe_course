@@ -54,3 +54,11 @@ app.delete('/user/:id', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Estou monitorando a porta ${PORT}`);
 });
+
+// json de teste:
+// {
+//   "first_name": "Rafael",
+//   "last_name": "Leite",
+//   "email": "rafaelqleite@gmail.com",
+//   "password": "senhaa"
+// }
