@@ -3,6 +3,10 @@ import csv
 # lê os dados
 with open("balneabilidade.csv") as file:
     beach_status_reader = csv.DictReader(file, delimiter=",", quotechar='"')
+
+    header, *data = beach_status_reader
+    print("eis o data:", data)
+
     # a linha de cabeçaçhos é utilizada como chave do dicionário
     # agrupa campanhas e suas respectivas balneabilidades
     bathing_by_campaign = {}
