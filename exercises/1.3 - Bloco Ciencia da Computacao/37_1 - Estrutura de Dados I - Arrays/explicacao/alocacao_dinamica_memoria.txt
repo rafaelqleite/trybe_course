@@ -1,0 +1,40 @@
+# Supondo uma lista com 4 valores numéricos:
+            *---*---*---*---*
+original    | 1 | 2 | 3 | 4 |   posição na memória: 0x01
+            *---*---*---*---*
+
+# Ao adicionar um novo item, a lista precisa crescer:
+            *---*
+novo item   | 5 |
+            *---*
+            *---*---*---*---*
+original    | 1 | 2 | 3 | 4 |    posição na memória: 0x01
+            *---*---*---*---*
+
+# Uma nova lista é criada:
+            *---*---*---*---*---*---*---*---*
+nova        |   |   |   |   |   |   |   |   |    posição na memória: 0x1A
+            *---*---*---*---*---*---*---*---*
+
+# Os elementos da lista original são copiados para a nova lista:
+            *---*---*---*---*
+original    | 1 | 2 | 3 | 4 |    posição na memória: 0x01
+            *---*---*---*---*
+              ↓   ↓   ↓   ↓
+            *---*---*---*---*---*---*---*---*
+nova        | 1 | 2 | 3 | 4 |   |   |   |   |    posição na memória: 0x1A
+            *---*---*---*---*---*---*---*---*
+
+# O novo elemento é colocado na nova lista:
+            *---*
+novo item   | 5 | -------------
+            *---*             ↓
+            *---*---*---*---*---*---*---*---*
+nova        | 1 | 2 | 3 | 4 |   |   |   |   |    posição na memória: 0x1A
+            *---*---*---*---*---*---*---*---*
+
+# O endereço onde se encontrava a lista antiga é liberado para ser utilizado
+# e o "nome original" é atribuído a nova lista:
+            *---*---*---*---*---*---*---*---*
+original    | 1 | 2 | 3 | 4 | 5 |   |   |   |    posição na memória: 0x1A
+            *---*---*---*---*---*---*---*---*
